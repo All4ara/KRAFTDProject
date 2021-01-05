@@ -2,13 +2,16 @@ import React from 'react';
 import './App.css';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 
-import memories from './images/MEMORIES.jpg'
+import Form from './components/Form/Form'
+import Posts from './components/Posts/Posts'
+import logo from './images/logo.png'
+
 const App = () => {
   return (
     <Container maxWidth="lg">
       <AppBar position="static" color="inherit">
         <Typography variant="h2" align="center">Memories</Typography>
-        <img src={memories} alt="memories" height="60"/>
+        <img src={logo} alt="memories" height="400"/>
       </AppBar>
       <Grow in>
         <Container>
