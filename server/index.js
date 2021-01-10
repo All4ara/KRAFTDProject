@@ -15,7 +15,7 @@ app.use('/posts', postRoutes)
 
 
 
-const CONNECTION_URL = 'mongodb+srv://all4ara:ar3l1994@mycluster.ihmwm.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const CONNECTION_URL = 'mongodb+srv://Ariel:ar3l1994@cluster0.rcjei.mongodb.net/MyData?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
