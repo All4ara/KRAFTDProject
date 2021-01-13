@@ -8,11 +8,14 @@ export default makeStyles(() => ({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'rgb(0,0,0)',
+        zIndex: '1'
       },
       heading: {
-        color: 'rgba(0,183,255, 1)',
+        color: 'rgba(225,225,225,1)',
       },
       image: {
         marginLeft: '15px',
+        zIndex: '2'
       },
 }));
