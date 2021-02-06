@@ -10,7 +10,7 @@ API.interceptors.request.use((req) => {
     return req;
 })
 
-const url = 'https://kraftd.herokuapp.com/posts';
+// const url = 'https://kraftd.herokuapp.com/posts';
 
 export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('posts', newPost);
