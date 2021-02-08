@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px 50px',
+    padding: '10px 20px 10px 15px',
   },
   heading: {
     color: 'white',
@@ -22,16 +22,17 @@ export default makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '400px',
+    width: '300px',
   },
   profile: {
     display: 'flex',
-    justifyContent: 'space-between',
-    width: '400px',
+    justifyContent: 'space-evenly',
+    width: '150px',
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
+    color: 'white'
   },
   brandContainer: {
     display: 'flex',
@@ -41,4 +42,10 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+  logout: {
+    fontWeight: '700',
+    color: 'black',
+    fontSize: '1rem',
+    backgroundColor: 'beige'
+  }
 }));

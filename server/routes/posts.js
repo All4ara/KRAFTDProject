@@ -3,7 +3,7 @@ import express from 'express';
 // const Post = require('../models/postMessage');
 // const uploader = require('../config/cloudinary-setup')
 
-import { getPosts, createPost, updatePost, deletePost, likePost } from '../controllers/posts.js'
+import { getPosts, getPost, createPost, updatePost, deletePost, likePost } from '../controllers/posts.js'
 import auth from '../middleware/auth.js'
 
 const router = express.Router();
