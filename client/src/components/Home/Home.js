@@ -22,7 +22,7 @@ const Home = () => {
     return(
         <Grow in>
         <Container>
-          <Grid className={classes.content} container justify="space-between" alignItems="stretch" spacing={3}>
+          <Grid className={classes.content} container justify="space-around" alignItems="stretch" spacing={3}>
               <Grid className={classes.form} item xs={12} sm={6} >
                   <Form currentId={currentId} setCurrentId={setCurrentId}/>
               </Grid>
