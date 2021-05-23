@@ -36,6 +36,9 @@ const Home = () => {
                   <Posts setCurrentId={setCurrentId}/>
               </Grid>
               <Grid className={classes.form} item xs={12} sm={6} md={6}>
+                <AppBar className={classes.appBarSearch} position="static" color="inherit">
+                    <TextField name="search" variant="outlined" label="Search Crafts" fullWidth value="TEST" onChange={() => {}}/>
+                </AppBar>
                   <Form currentId={currentId} setCurrentId={setCurrentId}/>
                   <Paper elevation={6}>
                     <Pagination />
