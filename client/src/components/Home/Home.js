@@ -54,10 +54,10 @@ const Home = () => {
         <Grow in>
         <Container maxWidth="lg" style={{marginTop: '140px'}}>
           <Grid className={classes.content} container justify="space-around" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-              <Grid className={classes.post} item xs={12} sm={6} md={6}>
+              <Grid className={classes.post} item xs={12} sm={7} md={8}>
                   <Posts setCurrentId={setCurrentId}/>
               </Grid>
-              <Grid className={classes.form} item xs={12} sm={6} md={6}>
+              <Grid className={classes.form} item xs={12} sm={5} md={4}>
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
                     <TextField name="search" variant="outlined" label="Search Crafts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)}/>
                     <ChipInput style={{margin: '10px 0'}} value={tags} onAdd={handleAdd} onDelete={handleDelete} label="Search Tags" variant="outlined"/>
