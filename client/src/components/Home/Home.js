@@ -24,11 +24,30 @@ const Home = () => {
     const page = query.get('page') || 1;
     const searchQuery = query.get('searchQuery');
     const [search, setSearch] = useState('');
+    const [tags, setTags] = useState([]);
 
     useEffect(() =>{
         dispatch(getPosts());
     }, [currentId, dispatch]);
-    
+
+    const searchPost = () => {
+        if(search.trim()) {
+            // dispatch => fetch search post
+        } else {
+            history.push('/');
+        }
+    }
+
+    const handleKeyCode = (e) => {
+        if(e.keyCode === 13) {
+            searchPost();
+        }
+    }
+
+    const handleAdd = (tag) => setTags([...tags, tag]);
+
+    const handleDelete = (tagToDelete) => setTags(tags.filter((tag) => tag !== tagToDelete));
+
     return(
         <Grow in>
         <Container maxWidth="lg" style={{marginTop: '140px'}}>
@@ -39,6 +58,8 @@ const Home = () => {
               <Grid className={classes.form} item xs={12} sm={6} md={6}>
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
                     <TextField name="search" variant="outlined" label="Search Crafts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)}/>
+                    <ChipInput style={{margin: '10px 0'}} value={tags} onAdd={handleAdd} onDelete={handleDelete} label="Search Tags" variant="outlined"/>
+                    <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
                 </AppBar>
                   <Form currentId={currentId} setCurrentId={setCurrentId}/>
                   <Paper className={classes.pagination} elevation={6}>
