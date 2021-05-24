@@ -23,6 +23,7 @@ const Home = () => {
     const history = useHistory();
     const page = query.get('page') || 1;
     const searchQuery = query.get('searchQuery');
+    const [search, setSearch] = useState('');
 
     useEffect(() =>{
         dispatch(getPosts());
@@ -37,10 +38,10 @@ const Home = () => {
               </Grid>
               <Grid className={classes.form} item xs={12} sm={6} md={6}>
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
-                    <TextField name="search" variant="outlined" label="Search Crafts" fullWidth value="TEST" onChange={() => {}}/>
+                    <TextField name="search" variant="outlined" label="Search Crafts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)}/>
                 </AppBar>
                   <Form currentId={currentId} setCurrentId={setCurrentId}/>
-                  <Paper elevation={6}>
+                  <Paper className={classes.pagination} elevation={6}>
                     <Pagination />
                   </Paper>
               </Grid>
