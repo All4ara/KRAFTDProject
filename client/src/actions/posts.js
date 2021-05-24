@@ -15,7 +15,7 @@ export const getPosts = () => async (dispatch) => {
 
 export const getPostsBySearch = (searchQuery) => async (dispatch) => {
     try {
-        const { data } = await api.fetchPostsBySerach(searchQuery);
+        const { data: { data } } = await api.fetchPostsBySerach(searchQuery);
 
         console.log(data);
     } catch (error) {
