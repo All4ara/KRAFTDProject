@@ -13,6 +13,7 @@ API.interceptors.request.use((req) => {
 // const url = 'https://kraftd.herokuapp.com/posts';
 
 export const fetchPosts = () => API.get('/posts');
+export const fetchPostsBySerach = (searchQuery) => API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
 export const createPost = (newPost) => API.post('/posts', newPost);
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`);

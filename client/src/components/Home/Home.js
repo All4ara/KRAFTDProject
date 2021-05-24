@@ -38,7 +38,7 @@ const Home = () => {
         }
     }
 
-    const handleKeyCode = (e) => {
+    const handleKeyPress = (e) => {
         if(e.keyCode === 13) {
             searchPost();
         }
