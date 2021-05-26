@@ -9,7 +9,7 @@ import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { deletePost, likePost } from '../../../actions/posts'
+import { getPost, deletePost, likePost } from '../../../actions/posts'
 
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
@@ -30,11 +30,14 @@ const Post = ({ post, setCurrentId }) => {
      return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
      };
 
-     const openPost = () => history.push(`/posts/${post._id}`);
+     const openPost = (e) => {
+          //dispatch(getPost(post._id, history));
+          history.push(`/posts/${post._id}`);
+     }
 
     return(
      <Card className={classes.card} raised elevation={6}>
-          <ButtonBase className={classes.cardAction} onClick={openPost}>
+          <ButtonBase className={classes.cardAction} onClick={openPost} component="span" name="test">
                <CardMedia className={classes.media} image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={post.title} />
                <div className={classes.overlay}>
                     <Typography variant="h6">{post.name}</Typography>
@@ -42,7 +45,14 @@ const Post = ({ post, setCurrentId }) => {
                </div>
                {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
                <div className={classes.overlay2}>
-                    <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
+                    <Button
+                         onClick={(e) => {
+                         e.stopPropagation();
+                         setCurrentId(post._id);
+                         }}
+                         style={{ color: 'white' }}
+                         size="small"
+                         >
                          <MoreHorizIcon fontSize="default" />
                     </Button>
                </div>
