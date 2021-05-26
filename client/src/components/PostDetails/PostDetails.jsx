@@ -18,11 +18,11 @@ const Post = () => {
     dispatch(getPost(id));
   }, [id]);
 
-  // useEffect(() => {
-  //   if (post) {
-  //     dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join(',') }));
-  //   }
-  // }, [post]);
+  useEffect(() => {
+    if (post) {
+      dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join(',') }));
+    }
+  }, [post]);
 
   if (!post) return null;
 
@@ -36,10 +36,10 @@ const Post = () => {
     );
   }
 
-  const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
+   //const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
-    <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+    <Paper style={{ marginTop: '100px',padding: '20px', borderRadius: '15px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>
@@ -57,7 +57,7 @@ const Post = () => {
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
-      {!!recommendedPosts.length && (
+      {/* {!!recommendedPosts.length && (
         <div className={classes.section}>
           <Typography gutterBottom variant="h5">You might also like:</Typography>
           <Divider />
@@ -73,7 +73,7 @@ const Post = () => {
             ))}
           </div>
         </div>
-      )}
+      )} */}
     </Paper>
   );
 };
