@@ -5,7 +5,7 @@ import { AppBar, Button, Toolbar, Typography, Avatar } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import useStyles from './styles';
-import logo from '../../images/Crafted.png';
+
 
 const Navbar = () => {
     const classes = useStyles();
