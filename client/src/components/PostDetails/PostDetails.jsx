@@ -35,7 +35,7 @@ const Post = () => {
       </Paper>
     );
   }
-
+  // issue with reccomended posts must debug
   //  const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
