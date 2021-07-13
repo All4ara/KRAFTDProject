@@ -7,7 +7,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import { getPost, getPostsBySearch } from '../../actions/posts';
 import useStyles from './styles';
 
-const Post = () => {
+const PostDetails = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -35,8 +35,8 @@ const Post = () => {
       </Paper>
     );
   }
- 
-  //  const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
+
+  const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
     <Paper style={{ marginTop: '100px',padding: '20px', borderRadius: '15px' }} elevation={6}>
@@ -57,8 +57,7 @@ const Post = () => {
           <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
-      // fixing issues with recommended posts
-      {/* {recommendedPosts.length && (
+      {recommendedPosts.length && (
         <div className={classes.section}>
           <Typography gutterBottom variant="h5">You might also like:</Typography>
           <Divider />
@@ -74,9 +73,9 @@ const Post = () => {
             ))}
           </div>
         </div>
-      )} */}
+      )}
     </Paper>
   );
 };
 
-export default Post;
+export default PostDetails;

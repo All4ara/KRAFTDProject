@@ -22,6 +22,7 @@ export default makeStyles((theme) => ({
     flex: 1,
   },
   imageSection: {
+    width: '60%',
     marginLeft: '20px',
     [theme.breakpoints.down('sm')]: {
       marginLeft: 0,
