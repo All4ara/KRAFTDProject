@@ -22,13 +22,16 @@ export default makeStyles((theme) => ({
     flex: 1,
   },
   imageSection: {
-    width: '60%',
+    width: '50%',
     marginLeft: '20px',
+    marginBottom: '50px',
     [theme.breakpoints.down('sm')]: {
+      width: '100%',
       marginLeft: 0,
     },
   },
   recommendedPosts: {
+    marginTop: '30px',
     display: 'flex',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
@@ -37,4 +40,10 @@ export default makeStyles((theme) => ({
   loadingPaper: {
     display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
   },
+  commentsOuterContainer: {
+    display: 'flex', justifyContent: 'space-between',
+  },
+  commentsInnerContainer: {
+    height: '200px', overflowY: 'auto', marginRight: '30px',
+  }
 }));
