@@ -5,7 +5,7 @@ import { AppBar, Button, Toolbar, Typography, Avatar } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import useStyles from './styles';
-import * as actionType from '../../constants/actionTypes';
+
 
 const Navbar = () => {
     const classes = useStyles();
@@ -15,7 +15,7 @@ const Navbar = () => {
     const location = useLocation();
 
     const logout = () => {
-        dispatch({ type: actionType.LOGOUT })
+        dispatch({ type: 'LOGOUT' })
 
         history.push('/')
 
